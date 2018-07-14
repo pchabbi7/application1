@@ -8,6 +8,10 @@ class PortfoliosController < ApplicationController
 		@portfolio_items = Portfolio.new
 	end # new
 
+  def show
+    @portfolio_item = Portfolio.find(params[:id])
+  end # show  
+
   # POST /portfolios
   # POST /portfolios.json
   def create

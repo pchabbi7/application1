@@ -38,8 +38,21 @@ class PortfoliosController < ApplicationController
         format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
       else
         format.html { render :edit }
-      end
-    end
-  end  
+      end #if
+    end #do
+  end   # update 
+
+
+  def destroy
+    # Fetch the portfolio item
+    @portfolio_item = Portfolio.find(params[:id])
+
+    #Destory the portfolio item
+    @portfolio_item.destroy
+
+    respond_to do |format|
+      format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully destroyed.' }
+    end # do
+  end # destory
 
 end # class

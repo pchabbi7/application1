@@ -4,4 +4,7 @@ class Blog < ApplicationRecord
   	
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  #Validation for mandatory feilds
+   validates_presence_of :title, :body
 end

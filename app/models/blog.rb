@@ -1,5 +1,7 @@
 class Blog < ApplicationRecord
-
+  #relation to topic
+  belongs_to :topic
+ 
   enum status: {draft: 0, published:1}
   	
   extend FriendlyId
